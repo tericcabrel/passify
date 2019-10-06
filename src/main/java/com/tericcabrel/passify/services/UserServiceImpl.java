@@ -44,10 +44,11 @@ public class UserServiceImpl implements UserService {
 
     public User save(UserRegistrationDto userRegistrationDto) {
         User user = new User();
+        user.setPassCode(passwordEncoder.encode(String.valueOf(userRegistrationDto.getPassCode())));
         user.setEmail(userRegistrationDto.getEmail());
         user.setPassword(passwordEncoder.encode(userRegistrationDto.getPassword()));
         user.setName(userRegistrationDto.getName());
-        user.setPhone(userRegistrationDto.getName());
+        user.setPhone(userRegistrationDto.getPhone());
         user.setGender(userRegistrationDto.getGender());
         user.setBirthDate(userRegistrationDto.getBirthDate());
         user.setExpireDate(userRegistrationDto.getExpireDate());

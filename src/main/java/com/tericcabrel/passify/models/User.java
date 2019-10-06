@@ -12,7 +12,7 @@ import java.util.*;
 @Table(name = "users")
 public class User extends Model {
     @Column(name = "pass_code", nullable = false)
-    private int passCode;
+    private String passCode;
 
     @Column(nullable = false, length = 100)
     private String name;
@@ -20,7 +20,7 @@ public class User extends Model {
     @Column(nullable = false, unique = true, length = 50)
     private String email;
 
-    @Column(nullable = false, unique = true, length = 255)
+    @Column(nullable = false, unique = true)
     private String password;
 
     @Column(nullable = false, length = 30)
@@ -42,8 +42,7 @@ public class User extends Model {
     private int credit;
 
     @Column()
-    @Lob
-    private Byte[] avatar;
+    private String avatar;
 
     @Column(name = "about_me", nullable = false, length = 250)
     private String aboutMe;
@@ -95,11 +94,11 @@ public class User extends Model {
         topics = new HashSet<>();
     }
 
-    public int getPassCode() {
+    public String getPassCode() {
         return passCode;
     }
 
-    public User setPassCode(int passCode) {
+    public User setPassCode(String passCode) {
         this.passCode = passCode;
         return this;
     }
@@ -185,11 +184,11 @@ public class User extends Model {
         return this;
     }
 
-    public Byte[] getAvatar() {
+    public String getAvatar() {
         return avatar;
     }
 
-    public User setAvatar(Byte[] avatar) {
+    public User setAvatar(String avatar) {
         this.avatar = avatar;
         return this;
     }

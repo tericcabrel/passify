@@ -9,7 +9,6 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
-import java.util.Arrays;
 import java.util.Map;
 
 @FieldMatch.List({
@@ -48,7 +47,7 @@ public class UserRegistrationDto {
     @PositiveOrZero(message = "Mark must be a positive value or equal to 0")
     private int credit;
 
-    private Byte[] avatar;
+    private String avatar;
 
     @Size(min = 10, max = 250, message = "About Me must be between 10 and 250 characters")
     private String aboutMe;
@@ -160,11 +159,11 @@ public class UserRegistrationDto {
         return this;
     }
 
-    public Byte[] getAvatar() {
+    public String getAvatar() {
         return avatar;
     }
 
-    public UserRegistrationDto setAvatar(Byte[] avatar) {
+    public UserRegistrationDto setAvatar(String avatar) {
         this.avatar = avatar;
         return this;
     }
@@ -245,7 +244,7 @@ public class UserRegistrationDto {
                 ", expireDate=" + expireDate +
                 ", mark=" + mark +
                 ", credit=" + credit +
-                ", avatar=" + Arrays.toString(avatar) +
+                ", avatar=" + avatar +
                 ", aboutMe='" + aboutMe + '\'' +
                 ", timezone='" + timezone + '\'' +
                 ", country=" + country +
