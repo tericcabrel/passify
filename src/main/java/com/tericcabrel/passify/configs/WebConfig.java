@@ -1,6 +1,7 @@
 package com.tericcabrel.passify.configs;
 
 import com.tericcabrel.passify.interceptors.SessionInterceptor;
+import com.tericcabrel.passify.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +21,9 @@ public class WebConfig implements WebMvcConfigurer
 
     private AppConfig appConfig;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Bean
     public SpringSecurityDialect securityDialect() {
         return new SpringSecurityDialect();
@@ -27,7 +31,7 @@ public class WebConfig implements WebMvcConfigurer
 
     @Bean
     SessionInterceptor sessionInterceptor() {
-        return new SessionInterceptor(appConfig);
+        return new SessionInterceptor(appConfig, userRepository);
     }
 
     @Override

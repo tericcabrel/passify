@@ -6,5 +6,11 @@
 </head>
 <body>
     <h1 th:text="'Welcome on ' + ${#session.getAttribute('app_name')}">WELCOME on</h1>
+    <p>
+        <a th:href="@{/register}">Create your account</a>
+    </p>
+    <p>
+        <a th:href="@{/login}">Sign in to your account</a>
+    </p>
 </body>
 </html>
