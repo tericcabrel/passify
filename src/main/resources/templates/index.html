@@ -5,6 +5,6 @@
     <title>Passify</title>
 </head>
 <body>
-    <h1>WELCOME</h1>
+    <h1 th:text="'Welcome on ' + ${#session.getAttribute('app_name')}">WELCOME on</h1>
 </body>
 </html>

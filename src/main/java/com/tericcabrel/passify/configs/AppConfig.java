@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 @Component
 @ConfigurationProperties(prefix="passify")
-public class PassifyConfig {
+public class AppConfig {
     @NotNull
     private String appname;
 
@@ -15,7 +15,7 @@ public class PassifyConfig {
         return appname;
     }
 
-    public PassifyConfig setAppname(String appname) {
+    public AppConfig setAppname(String appname) {
         this.appname = appname;
         return this;
     }
