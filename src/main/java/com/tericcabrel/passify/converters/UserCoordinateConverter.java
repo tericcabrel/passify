@@ -2,6 +2,8 @@ package com.tericcabrel.passify.converters;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
@@ -10,6 +12,7 @@ import java.util.Map;
 
 @Converter
 public class UserCoordinateConverter implements AttributeConverter<Map, String> {
+    private static final Logger logger = LoggerFactory.getLogger(UserCoordinateConverter.class);
 
     @Override
     public String convertToDatabaseColumn(Map customerInfo) {
@@ -22,8 +25,7 @@ public class UserCoordinateConverter implements AttributeConverter<Map, String> 
             ObjectMapper objectMapper = new ObjectMapper();
             customerInfoJson = objectMapper.writeValueAsString(customerInfo);
         } catch (final JsonProcessingException e) {
-            // TODO add Logger -> logger.error("JSON writing error", e);
-            System.out.println("JSON writing error : " +  e.getMessage());
+            logger.error("JSON writing error : " +  e.getMessage());
         }
 
         return customerInfoJson;
@@ -41,8 +43,7 @@ public class UserCoordinateConverter implements AttributeConverter<Map, String> 
             ObjectMapper objectMapper = new ObjectMapper();
             coordinate = objectMapper.readValue(coordinateJSON, Map.class);
         } catch (final IOException e) {
-            // TODO add Logger -> logger.error("JSON reading error", e);
-            System.out.println("JSON reading error : " +  e.getMessage());
+            logger.error("JSON reading error : " +  e.getMessage());
         }
 
         return coordinate;

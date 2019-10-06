@@ -2,7 +2,6 @@ package com.tericcabrel.passify.configs;
 
 import com.tericcabrel.passify.interceptors.SessionInterceptor;
 import com.tericcabrel.passify.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,13 +15,14 @@ import org.thymeleaf.extras.springsecurity5.dialect.SpringSecurityDialect;
 @Configuration
 public class WebConfig implements WebMvcConfigurer
 {
-    @Autowired
     private MessageSource messageSource;
 
-    private AppConfig appConfig;
-
-    @Autowired
     private UserRepository userRepository;
+
+    public WebConfig(MessageSource messageSource, UserRepository userRepository) {
+        this.messageSource = messageSource;
+        this.userRepository = userRepository;
+    }
 
     @Bean
     public SpringSecurityDialect securityDialect() {
@@ -31,7 +31,7 @@ public class WebConfig implements WebMvcConfigurer
 
     @Bean
     SessionInterceptor sessionInterceptor() {
-        return new SessionInterceptor(appConfig, userRepository);
+        return new SessionInterceptor(userRepository);
     }
 
     @Override

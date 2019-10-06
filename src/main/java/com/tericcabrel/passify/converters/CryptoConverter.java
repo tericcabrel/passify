@@ -1,5 +1,7 @@
 package com.tericcabrel.passify.converters;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import javax.persistence.AttributeConverter;
@@ -9,15 +11,17 @@ import java.util.Base64;
 
 @Converter
 public class CryptoConverter implements AttributeConverter<String, String> {
-    // TODO Read from application properties
-    private static final String ALGORITHM = "AES/ECB/PKCS5Padding";
-    // TODO Read from application properties
-    private static final byte[] KEY = "MySuperSecretKey".getBytes();
+
+    @Value("${passify.crypto-algorithm}")
+    private String ALGORITHM;
+
+    @Value("${passify.crypto-key}")
+    private String KEY;
 
     @Override
     public String convertToDatabaseColumn(String ccNumber) {
         // do some encryption
-        Key key = new SecretKeySpec(KEY, "AES");
+        Key key = new SecretKeySpec(KEY.getBytes(), "AES");
         try {
             Cipher c = Cipher.getInstance(ALGORITHM);
             c.init(Cipher.ENCRYPT_MODE, key);
@@ -30,7 +34,7 @@ public class CryptoConverter implements AttributeConverter<String, String> {
     @Override
     public String convertToEntityAttribute(String dbData) {
         // do some decryption
-        Key key = new SecretKeySpec(KEY, "AES");
+        Key key = new SecretKeySpec(KEY.getBytes(), "AES");
         try {
             Cipher c = Cipher.getInstance(ALGORITHM);
             c.init(Cipher.DECRYPT_MODE, key);

@@ -9,6 +9,7 @@ import com.tericcabrel.passify.models.User;
 import com.tericcabrel.passify.repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -18,12 +19,12 @@ public class SessionInterceptor implements HandlerInterceptor
 {
     private static final Logger logger = LoggerFactory.getLogger(SessionInterceptor.class);
 
-    private AppConfig appConfig;
+    @Value("${passify.appname}")
+    private String appName;
 
     private UserRepository userRepository;
 
-    public SessionInterceptor(AppConfig appConfig, UserRepository userRepository) {
-        this.appConfig = appConfig;
+    public SessionInterceptor(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
@@ -35,7 +36,7 @@ public class SessionInterceptor implements HandlerInterceptor
         String appName = (String) session.getAttribute("app_name");
 
         if (appName == null) {
-            session.setAttribute("app_name", appConfig.getAppname());
+            session.setAttribute("app_name", this.appName);
         }
 
         String username = null;

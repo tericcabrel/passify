@@ -11,6 +11,10 @@ public class AppConfig {
     @NotNull
     private String appname;
 
+    private String cryptoAlgorithm;
+
+    private String cryptoKey;
+
     public String getAppname() {
         return appname;
     }
@@ -20,10 +24,30 @@ public class AppConfig {
         return this;
     }
 
+    public String getCryptoAlgorithm() {
+        return cryptoAlgorithm;
+    }
+
+    public AppConfig setCryptoAlgorithm(String cryptoAlgorithm) {
+        this.cryptoAlgorithm = cryptoAlgorithm;
+        return this;
+    }
+
+    public String getCryptoKey() {
+        return cryptoKey;
+    }
+
+    public AppConfig setCryptoKey(String cryptoKey) {
+        this.cryptoKey = cryptoKey;
+        return this;
+    }
+
     @Override
     public String toString() {
-        return "PassifyConfig{" +
+        return "AppConfig{" +
                 "appname='" + appname + '\'' +
+                ", cryptoAlgorithm='" + cryptoAlgorithm + '\'' +
+                ", cryptoKey='" + cryptoKey + '\'' +
                 '}';
     }
 }
