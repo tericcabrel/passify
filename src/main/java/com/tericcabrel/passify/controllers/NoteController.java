@@ -27,12 +27,12 @@ public class NoteController {
     public String createNote(@RequestParam(name = "groupId", required = false) String noteGroupId, Model model) {
         System.out.println("Note group Id => " + noteGroupId);
 
-        return "edit";
+        return "app/user/notes/edit";
     }
 
     @GetMapping("/notes/{id}")
     public String updateNote(@PathVariable(value = "id") Long noteId, Model model) {
         System.out.println("Note id => " + noteId);
-        return "edit";
+        return "app/user/notes/edit";
     }
 }

@@ -5,12 +5,75 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{app/layout/main}">>
 <head>
-    <title>Notes group</title>
-    <!--<link rel="stylesheet" th:href="@{/assets/css/app/home.css}">-->
+    <title>Notes</title>
+    <link rel="stylesheet" th:href="@{/assets/css/app/notes.css}">
 </head>
 <body>
     <div layout:fragment="content">
-        <h1>Notes</h1>
+        <div class="row notes">
+            <div class="col-lg-4">
+                <a href="/" th:href="@{/notes/create}" class="btn-primary-link">
+                    <div class="card text-dark bg-white p-3 note-add">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Double click to delete -->
+                <a href="/" th:href="@{/notes/{id}(id='1')}" class="btn-primary-link">
+                    <div class="card text-dark bg-white p-3 note">
+                        <h3 class="card-title">Personal</h3>
+                        <p class="card-text mt-2">07 notes</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4">
+                <a href="/" th:href="@{/notes/{id}(id='2')}" class="btn-primary-link">
+                    <div class="card text-dark bg-white p-3 note">
+                        <h3 class="card-title">Work</h3>
+                        <p class="card-text mt-2">12 notes</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4">
+                <a href="/" th:href="@{/notes/{id}(id='3')}" class="btn-primary-link">
+                    <div class="card text-dark bg-white p-3 note">
+                        <h3 class="card-title">Hosting</h3>
+                        <p class="card-text mt-2">04 notes</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4">
+                <a href="/" th:href="@{/notes/{id}(id='4')}" class="btn-primary-link">
+                    <div class="card text-dark bg-white p-3 note">
+                        <h3 class="card-title">Movies</h3>
+                        <p class="card-text mt-2">00 note</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4">
+                <a href="/" th:href="@{/notes/{id}(id='5')}" class="btn-primary-link">
+                    <div class="card text-dark bg-white p-3 note">
+                        <h3 class="card-title">My Projects</h3>
+                        <p class="card-text mt-2">25 notes</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4">
+                <a href="/" th:href="@{/notes/{id}(id='6')}" class="btn-primary-link">
+                    <div class="card text-dark bg-white p-3 note">
+                        <h3 class="card-title">Search</h3>
+                        <p class="card-text mt-2">01 note</p>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
     <div layout:fragment="scripts">
 

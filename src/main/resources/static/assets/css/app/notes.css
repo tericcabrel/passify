@@ -1,0 +1,24 @@
+.notes {
+    
+}
+
+.notes .note-add {
+    cursor: pointer;
+    text-align: center;
+    font-size: 40px;
+}
+
+.notes .note-add i {
+    margin-top: 12.5px;
+    margin-bottom: 12.5px;
+}
+
+.notes .note {
+    cursor: pointer;
+}
+
+.notes .note:hover {
+    background-color: #0e0c28 !important;
+    color: #fff !important;
+    transition: all .5s;
+}
