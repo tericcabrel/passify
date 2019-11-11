@@ -1,0 +1,24 @@
+.note-groups {
+    
+}
+
+.note-groups .note-group-add {
+    cursor: pointer;
+    text-align: center;
+    font-size: 40px;
+}
+
+.note-groups .note-group-add i {
+    margin-top: 12.5px;
+    margin-bottom: 12.5px;
+}
+
+.note-groups .note-group {
+    cursor: pointer;
+}
+
+.note-groups .note-group:hover {
+    background-color: #0e0c28 !important;
+    color: #fff !important;
+    transition: all .5s;
+}

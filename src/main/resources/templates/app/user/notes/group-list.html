@@ -6,11 +6,71 @@
       layout:decorate="~{app/layout/main}">>
 <head>
     <title>Notes group</title>
-    <!--<link rel="stylesheet" th:href="@{/assets/css/app/home.css}">-->
+    <link rel="stylesheet" th:href="@{/assets/css/app/note-groups.css}">
 </head>
 <body>
     <div layout:fragment="content">
-        <h1>Note Groups</h1>
+        <div class="row note-groups">
+            <div class="col-lg-3">
+                <div class="card text-dark bg-white p-3 note-group-add">
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <a href="/" th:href="@{/notes(groupName='personal')}" class="btn-primary-link">
+                    <div class="card text-dark bg-white p-3 note-group">
+                        <h3 class="card-title">Personal</h3>
+                        <p class="card-text mt-2">07 notes</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3">
+                <a href="/" th:href="@{/notes(groupName='work')}" class="btn-primary-link">
+                    <div class="card text-dark bg-white p-3 note-group">
+                        <h3 class="card-title">Work</h3>
+                        <p class="card-text mt-2">12 notes</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3">
+                <a href="/" th:href="@{/notes(groupName='hosting')}" class="btn-primary-link">
+                    <div class="card text-dark bg-white p-3 note-group">
+                        <h3 class="card-title">Hosting</h3>
+                        <p class="card-text mt-2">04 notes</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3">
+                <a href="/" th:href="@{/notes(groupName='movies')}" class="btn-primary-link">
+                    <div class="card text-dark bg-white p-3 note-group">
+                        <h3 class="card-title">Movies</h3>
+                        <p class="card-text mt-2">00 note</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3">
+                <a href="/" th:href="@{/notes(groupName='my-projects')}" class="btn-primary-link">
+                    <div class="card text-dark bg-white p-3 note-group">
+                        <h3 class="card-title">My Projects</h3>
+                        <p class="card-text mt-2">25 notes</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3">
+                <a href="/" th:href="@{/notes(groupName='search')}" class="btn-primary-link">
+                    <div class="card text-dark bg-white p-3 note-group">
+                        <h3 class="card-title">Search</h3>
+                        <p class="card-text mt-2">01 note</p>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
     <div layout:fragment="scripts">
 
