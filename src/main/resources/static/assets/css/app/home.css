@@ -1,0 +1,18 @@
+.my-notes .note-item {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.my-notes .note-group {
+    width: 15%;
+}
+.my-notes .note-title {
+    width: 30%;
+    font-weight: bold;
+}
+.my-notes .note-description {
+    width: 40%;
+}
+.my-notes .note-date {
+    width: 15%;
+    font-size: 11px;
+}

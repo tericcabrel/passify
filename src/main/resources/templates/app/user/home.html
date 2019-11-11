@@ -7,11 +7,12 @@
       layout:decorate="~{app/layout/main}">>
 <head>
     <title>User Home</title>
+    <link rel="stylesheet" th:href="@{/assets/css/app/home.css}">
 </head>
 <body>
     <div layout:fragment="content">
         <h1>
-            Welcome <span th:text="${#authentication.name}">User</span>
+            Welcome <span th:text="${#session.getAttribute('user_name')}">User</span>
         </h1>
         <div sec:authorize="hasRole('USER')">
             <h3>You will see this only if you are ADMIN</h3>
@@ -20,83 +21,148 @@
             </p>
         </div>
         <div class="row">
-            <!-- ============================================================== -->
-            <!-- sales  -->
-            <!-- ============================================================== -->
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                 <div class="card border-3 border-top border-top-primary">
                     <div class="card-body">
-                        <h5 class="text-muted">Sales</h5>
+                        <h5 class="text-muted">App Account</h5>
                         <div class="metric-value d-inline-block">
-                            <h1 class="mb-1">$12099</h1>
+                            <h1 class="mb-1">67</h1>
                         </div>
                         <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                            <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5.86%</span>
+                            <span class="icon-circle-small icon-box-xs text-success bg-success-light">
+                                <i class="fa fa-fw fa-arrow-up"></i>
+                            </span>
+                            <span class="ml-1">6%</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- end sales  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- new customer  -->
-            <!-- ============================================================== -->
+
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                 <div class="card border-3 border-top border-top-primary">
                     <div class="card-body">
-                        <h5 class="text-muted">New Customer</h5>
+                        <h5 class="text-muted">Bank Account</h5>
                         <div class="metric-value d-inline-block">
-                            <h1 class="mb-1">1245</h1>
+                            <h1 class="mb-1">05</h1>
                         </div>
                         <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                            <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
+                            <span class="icon-circle-small icon-box-xs text-success bg-success-light">
+                                <i class="fa fa-fw fa-arrow-up"></i>
+                            </span>
+                            <span class="ml-1">10%</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- end new customer  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- visitor  -->
-            <!-- ============================================================== -->
+
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                 <div class="card border-3 border-top border-top-primary">
                     <div class="card-body">
-                        <h5 class="text-muted">Visitor</h5>
+                        <h5 class="text-muted">Notes</h5>
                         <div class="metric-value d-inline-block">
-                            <h1 class="mb-1">13000</h1>
+                            <h1 class="mb-1">13</h1>
                         </div>
                         <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                            <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5%</span>
+                            <span class="icon-circle-small icon-box-xs text-success bg-success-light">
+                                <i class="fa fa-fw fa-arrow-up"></i>
+                            </span>
+                            <span class="ml-1">5%</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- end visitor  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- total orders  -->
-            <!-- ============================================================== -->
+
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                 <div class="card border-3 border-top border-top-primary">
                     <div class="card-body">
-                        <h5 class="text-muted">Total Orders</h5>
+                        <h5 class="text-muted">Contacts</h5>
                         <div class="metric-value d-inline-block">
-                            <h1 class="mb-1">1340</h1>
+                            <h1 class="mb-1">134</h1>
                         </div>
                         <div class="metric-label d-inline-block float-right text-danger font-weight-bold">
-                            <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
+                            <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light ">
+                                <i class="fa fa-fw fa-arrow-down"></i>
+                            </span>
+                            <span class="ml-1">4%</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- end total orders  -->
-            <!-- ============================================================== -->
         </div>
+
+        <div class="card">
+            <h5 class="card-header">My Latest note</h5>
+            <div class="card-body p-0">
+                <ul class="my-notes list-group list-group-flush">
+                    <li class="my-notes-content list-group-item d-flex">
+                        <div class="note-group note-item">
+                            <span class="badge badge-primary">Coding</span>
+                        </div>
+                        <div class="note-title note-item">
+                            Note title
+                        </div>
+                        <div class="note-description note-item">This is a note description...</div>
+                        <div class="note-date note-item d-flex align-items-center justify-content-end">
+                            <i class="fas fa-clock mr-1"></i> 15 seconds ago
+                        </div>
+                    </li>
+                    <li class="my-notes-content list-group-item d-flex">
+                        <div class="note-group note-item">
+                            <span class="badge badge-success">Engineering</span>
+                        </div>
+                        <div class="note-title note-item">
+                            Note title
+                        </div>
+                        <div class="note-description note-item">This is a note description...</div>
+                        <div class="note-date note-item d-flex align-items-center justify-content-end">
+                            <i class="fas fa-clock mr-1"></i> 9 minutes ago
+                        </div>
+                    </li>
+                    <li class="my-notes-content list-group-item d-flex">
+                        <div class="note-group note-item">
+                            <span class="badge badge-danger">Work</span>
+                        </div>
+                        <div class="note-title note-item">
+                            Note title
+                        </div>
+                        <div class="note-description note-item">This is a note description...</div>
+                        <div class="note-date note-item d-flex align-items-center justify-content-end">
+                            <i class="fas fa-clock mr-1"></i> 11 hours ago
+                        </div>
+                    </li>
+                    <li class="my-notes-content list-group-item d-flex">
+                        <div class="note-group note-item">
+                            <span class="badge badge-primary">Personal</span>
+                        </div>
+                        <div class="note-title note-item">
+                            Note title
+                        </div>
+                        <div class="note-description note-item">This is a note description...</div>
+                        <div class="note-date note-item d-flex align-items-center justify-content-end">
+                            <i class="fas fa-clock mr-1"></i> 3 days ago
+                        </div>
+                    </li>
+                    <li class="my-notes-content list-group-item d-flex">
+                        <div class="note-group note-item">
+                            <span class="badge badge-dark">Hosting</span>
+                        </div>
+                        <div class="note-title note-item">
+                            Note title
+                        </div>
+                        <div class="note-description note-item">This is a note description...</div>
+                        <div class="note-date note-item d-flex align-items-center justify-content-end">
+                            <i class="fas fa-clock mr-1"></i> 3 months ago
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer text-center">
+                <a href="#" class="btn-primary-link">View Details</a>
+            </div>
+        </div>
+    </div>
+    <div layout:fragment="scripts">
+        <!--<script th:src="@{/assets/js/register.js}"></script>-->
     </div>
 </body>
 </html>
