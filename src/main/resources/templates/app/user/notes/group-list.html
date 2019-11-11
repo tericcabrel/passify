@@ -10,9 +10,11 @@
 </head>
 <body>
     <div layout:fragment="content">
+        <div th:insert="app/user/notes/modals/create-note-group-modal :: noteGroupModal"></div>
+
         <div class="row note-groups">
             <div class="col-lg-3">
-                <div class="card text-dark bg-white p-3 note-group-add">
+                <div class="card text-dark bg-white p-3 note-group-add" data-toggle="modal" data-target="#note-group-modal">
                     <i class="fas fa-plus"></i>
                 </div>
             </div>
