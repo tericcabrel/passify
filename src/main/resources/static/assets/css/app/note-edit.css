@@ -4,4 +4,20 @@
 }
 .note-edit .card-note .card-body {
     min-height: 500px;
+    padding: 0;
+}
+
+.note-edit .card-note .card-body .standalone-container {
+    width: 100%;
+}
+.note-edit .card-note .card-body .standalone-container #snow-container {
+    min-height: 500px;
+    border: none;
+}
+
+.ql-toolbar.ql-snow {
+    border: none;
+}
+.ql-container.ql-snow {
+
 }

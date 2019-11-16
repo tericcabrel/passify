@@ -6,14 +6,15 @@
       layout:decorate="~{app/layout/main}">>
 <head>
     <title>Notes group</title>
-    <link rel="stylesheet" th:href="@{/assets/css/app/note-edit.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/vendor/quill-editor/quill.snow.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/app/note-edit.css}" />
 </head>
 <body>
     <div layout:fragment="content">
         <div class="col-xl-12 note-edit">
             <div class="card card-note">
                 <div class="card-header d-flex">
-                    <h4 class="mb-0" contenteditable="true">Note title</h4>
+                    <h4 class="mb-0" contenteditable="true">Enter the title here</h4>
                     <div class="dropdown ml-auto">
                         <a class="toolbar" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-ellipsis-v"></i>
@@ -34,14 +35,46 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="standalone-container">
+                        <div id="snow-container"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div layout:fragment="scripts">
+        <script type="text/javascript" th:src="@{'/assets/vendor/quill-editor/quill.min.js'}"></script>
+        <script>
+            var quill = new Quill('#snow-container', {
+                placeholder: 'Compose an epic...',
+                theme: 'snow',
+                modules: {
+                    toolbar: [
+                        [{ 'font': [] }],
+                        [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                        [{ size: [ 'small', false, 'large', 'huge' ]}],
+                        ['bold', 'italic', 'underline', 'strike', { 'script': 'sub'}, { 'script': 'super' }],
+                        ['link', 'image', 'code-block'],
+                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                        // [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+                        [{ 'indent': '-1'}, { 'indent': '+1' }, { 'align': [] }],          // outdent/indent
+                        // [{ 'direction': 'rtl' }],                         // text direction
+                        [{ 'color': [] }, { 'background': [] }],
+                        ['clean'] // Remove formatting
+                    ]
+                }
+            });
 
+            quill.keyboard.addBinding({
+                key: 'S',
+                shortKey: true
+            }, function(range, context) {
+                // this.quill.formatText(range, 'bold', true);
+                console.log(this.quill.getText());
+                console.log(this.quill.getLength());
+                // this.quill.setText('Hello\n');
+            });
+        </script>
     </div>
 </body>
 </html>
