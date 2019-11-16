@@ -51,6 +51,7 @@ public class User extends Model {
     private String timezone;
 
     @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "country_id", referencedColumnName = "id", nullable = true)
     private Country country;
 
     @Column(nullable = false, length = 100)
