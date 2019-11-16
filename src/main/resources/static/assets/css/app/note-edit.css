@@ -1,0 +1,7 @@
+.note-edit {
+    padding-left: 0;
+    padding-right: 0;
+}
+.note-edit .card-note .card-body {
+    min-height: 500px;
+}

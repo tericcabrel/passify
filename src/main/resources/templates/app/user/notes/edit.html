@@ -6,11 +6,39 @@
       layout:decorate="~{app/layout/main}">>
 <head>
     <title>Notes group</title>
-    <!--<link rel="stylesheet" th:href="@{/assets/css/app/home.css}">-->
+    <link rel="stylesheet" th:href="@{/assets/css/app/note-edit.css}">
 </head>
 <body>
     <div layout:fragment="content">
-        <h1>Create a note</h1>
+        <div class="col-xl-12 note-edit">
+            <div class="card card-note">
+                <div class="card-header d-flex">
+                    <h4 class="mb-0" contenteditable="true">Note title</h4>
+                    <div class="dropdown ml-auto">
+                        <a class="toolbar" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink" x-placement="bottom-end" style="position: absolute; transform: translate3d(18px, 23px, 0px); top: 0px; left: 0px; will-change: transform;">
+                           <!--<a class="dropdown-item text-primary" href="#">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <div class="dropdown-divider"></div>-->
+                            <a class="dropdown-item text-success" href="#">
+                                <i class="fas fa-check"></i> Save
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="#">
+                                <i class="fas fa-times"></i> Delete
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
     </div>
     <div layout:fragment="scripts">
 
