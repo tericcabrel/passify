@@ -6,7 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ContactController {
     @GetMapping("/contacts")
-    public String noteGroups(Model model) {
+    public String list(Model model) {
         return "app/user/contacts/list";
+    }
+
+    @GetMapping("/contacts/create")
+    public String create(Model model) {
+        return "app/user/contacts/create";
     }
 }

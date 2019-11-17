@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+    <div id="create-form-contact" th:fragment="create-form">
+        <div class="form-group">
+            <label for="input-name" class="col-form-label">Name* : </label>
+            <input id="input-name" type="text" class="form-control" placeholder="Eg: Harris, Sanix, Teco, etc." />
+        </div>
+        <div class="form-group">
+            <label for="input-birth" class="col-form-label">Date of birth : </label>
+            <input id="input-birth" type="text" class="form-control" placeholder="YYYY-MM-DD" />
+        </div>
+        <div class="form-group">
+            <label for="input-gender" class="col-form-label">Gender* : </label>
+            <div id="input-gender">
+                <label class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" name="gender" checked="checked" class="custom-control-input" />
+                    <span class="custom-control-label">Male</span>
+                </label>
+                <label class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" name="gender" class="custom-control-input" />
+                    <span class="custom-control-label">Female</span>
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-country" class="col-form-label">Country* : </label>
+            <select class="form-control" id="input-country">
+                <option value=""></option>
+                <option value="cm">Cameroon</option>
+                <option value="fr">France</option>
+            </select>
+        </div>
+        <div class="border-top border-bottom d-flex justify-content-between">
+            <span>Phone Number</span>
+            <button class="btn btn-primary btn-sm">
+                <i class="fas f"></i>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

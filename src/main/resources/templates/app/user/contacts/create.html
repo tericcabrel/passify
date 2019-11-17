@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{app/layout/main}">>
+<head>
+    <title>Add contact</title>
+    <link rel="stylesheet" th:href="@{/assets/css/app/contacts.css}">
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="row create-contact">
+        <div class="offset-xl-2 offset-2 col-xl-8 col-8">
+            <div class="simple-card">
+                <ul class="nav nav-tabs" id="contact-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link border-left-0 active show" id="tab-new-contact" data-toggle="tab" href="#new-contact" role="tab" aria-controls="home" aria-selected="true">
+                            <i class="fas fa-plus"></i> New
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tab-import-contact" data-toggle="tab" href="#import-contact" role="tab" aria-controls="profile" aria-selected="false">
+                            <i class="fas fa-upload"></i> Import
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="contact-tab-contact">
+                    <div class="tab-pane fade active show" id="new-contact" role="tabpanel" aria-labelledby="tab-new-contact">
+                        <div th:insert="app/user/contacts/include/create-form :: create-form"></div>
+                    </div>
+                    <div class="tab-pane fade" id="import-contact" role="tabpanel" aria-labelledby="tab-import-contact">
+                        Import contact
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div layout:fragment="scripts">
+
+</div>
+</body>
+</html>
