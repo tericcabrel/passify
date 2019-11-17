@@ -11,83 +11,174 @@
 <body>
     <div layout:fragment="content">
         <div class="row contacts">
-            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+            <div class="col-xl-12 col-12">
                 <div class="card">
-                    <h5 class="card-header">Recent Orders</h5>
+                    <h5 class="card-header d-flex justify-content-between">
+                        <div>Contact list</div>
+                        <a href="/" th:href="@{/contacts/create}">
+                            <i class="fas fa-plus"></i> Add contact
+                        </a>
+                    </h5>
                     <div class="card-body p-0">
+                        <div class="d-flex justify-content-between mt-2 mb-2 ml-3 mr-3">
+                            <div id="custom-search" class="contact-search-bar">
+                                <input class="form-control" type="text" placeholder="Search..." />
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="btn-export" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-download"></i> Export
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">JSON</a>
+                                    <a class="dropdown-item" href="#">CSV</a>
+                                    <a class="dropdown-item" href="#">EXCEL</a>
+                                    <a class="dropdown-item" href="#">PDF</a>
+                                    <a class="dropdown-item" href="#">VCF</a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class="bg-light">
-                                <tr class="border-0">
-                                    <th class="border-0">#</th>
-                                    <th class="border-0">Image</th>
-                                    <th class="border-0">Product Name</th>
-                                    <th class="border-0">Product Id</th>
-                                    <th class="border-0">Quantity</th>
-                                    <th class="border-0">Price</th>
-                                    <th class="border-0">Order Time</th>
-                                    <th class="border-0">Customer</th>
-                                    <th class="border-0">Status</th>
-                                </tr>
+                                    <tr class="border-0 text-center">
+                                        <th class="border-0">#</th>
+                                        <th class="border-0">Image</th>
+                                        <th class="border-0" style="width: 15%">Name</th>
+                                        <th class="border-0">Gender</th>
+                                        <th class="border-0">Birth date</th>
+                                        <th class="border-0">Country</th>
+                                        <th class="border-0" style="width: 23%">Numbers</th>
+                                        <th class="border-0">Action</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <div class="m-r-10"><img src="assets/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
-                                    </td>
-                                    <td>Product #1 </td>
-                                    <td>id000001 </td>
-                                    <td>20</td>
-                                    <td>$80.00</td>
-                                    <td>27-08-2018 01:22:12</td>
-                                    <td>Patricia J. King </td>
-                                    <td><span class="badge-dot badge-brand mr-1"></span>InTransit </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>
-                                        <div class="m-r-10"><img src="assets/images/product-pic-2.jpg" alt="user" class="rounded" width="45"></div>
-                                    </td>
-                                    <td>Product #2 </td>
-                                    <td>id000002 </td>
-                                    <td>12</td>
-                                    <td>$180.00</td>
-                                    <td>25-08-2018 21:12:56</td>
-                                    <td>Rachel J. Wicker </td>
-                                    <td><span class="badge-dot badge-success mr-1"></span>Delivered </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>
-                                        <div class="m-r-10"><img src="assets/images/product-pic-3.jpg" alt="user" class="rounded" width="45"></div>
-                                    </td>
-                                    <td>Product #3 </td>
-                                    <td>id000003 </td>
-                                    <td>23</td>
-                                    <td>$820.00</td>
-                                    <td>24-08-2018 14:12:77</td>
-                                    <td>Michael K. Ledford </td>
-                                    <td><span class="badge-dot badge-success mr-1"></span>Delivered </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>
-                                        <div class="m-r-10"><img src="assets/images/product-pic-4.jpg" alt="user" class="rounded" width="45"></div>
-                                    </td>
-                                    <td>Product #4 </td>
-                                    <td>id000004 </td>
-                                    <td>34</td>
-                                    <td>$340.00</td>
-                                    <td>23-08-2018 09:12:35</td>
-                                    <td>Michael K. Ledford </td>
-                                    <td><span class="badge-dot badge-success mr-1"></span>Delivered </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="9"><a href="#" class="btn btn-outline-light float-right">View Details</a></td>
-                                </tr>
+                                    <tr class="text-center">
+                                        <td>1</td>
+                                        <td>
+                                            <div class="m-r-10"><img src="/assets/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+                                        </td>
+                                        <td>Djiatsa Fabrice </td>
+                                        <td>Male </td>
+                                        <td>1998-01-22 (20)</td>
+                                        <td>
+                                            <span class="contact-flag"><i class="flag-icon flag-icon-cm"></i></span>
+                                        </td>
+                                        <td>698390153 / 678260013</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td>2</td>
+                                        <td>
+                                            <div class="m-r-10"><img src="/assets/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+                                        </td>
+                                        <td>Arnel Zeufack </td>
+                                        <td>Male </td>
+                                        <td>1995-09-20 (24)</td>
+                                        <td>
+                                            <span class="contact-flag"><i class="flag-icon flag-icon-fr"></i></span>
+                                        </td>
+                                        <td>+33 66056135</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td>3</td>
+                                        <td>
+                                            <div class="m-r-10"><img src="/assets/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+                                        </td>
+                                        <td>Lee San Dattebayo </td>
+                                        <td>Male </td>
+                                        <td>1995-01-01 (24)</td>
+                                        <td>
+                                            <span class="contact-flag"><i class="flag-icon flag-icon-ru"></i></span>
+                                        </td>
+                                        <td>+34 84823205</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td>4</td>
+                                        <td>
+                                            <div class="m-r-10"><img src="/assets/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+                                        </td>
+                                        <td>General Mario</td>
+                                        <td>Male </td>
+                                        <td>1993-05-12 (26)</td>
+                                        <td>
+                                            <span class="contact-flag"><i class="flag-icon flag-icon-ca"></i></span>
+                                        </td>
+                                        <td>+1 543-982-099</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td>5</td>
+                                        <td>
+                                            <div class="m-r-10"><img src="/assets/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+                                        </td>
+                                        <td>Wilfride Pinas </td>
+                                        <td>Male </td>
+                                        <td>1995-07-14 (24)</td>
+                                        <td>
+                                            <span class="contact-flag"><i class="flag-icon flag-icon-cm"></i></span>
+                                        </td>
+                                        <td>+237 691363116</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                    <div class="card-footer p-0">
+                        <div class="table-stat p-2 d-flex justify-content-between align-items-center">
+                            <div class="contact-count p-2">
+                                1 - 20 of 145
+                            </div>
+                            <ul class="pagination mb-0">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">«</span><span class="sr-only">Previous</span>      </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span>
+                                        <span class="sr-only">Next</span></a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
