@@ -28,6 +28,11 @@
                 <div class="tab-content" id="contact-tab-contact">
                     <div class="tab-pane fade active show" id="new-contact" role="tabpanel" aria-labelledby="tab-new-contact">
                         <div th:insert="app/user/contacts/include/create-form :: create-form"></div>
+                        <div class="mt-4">
+                            <button class="btn btn-primary btn-block btn-sm">
+                                <i class="fas fa-check"></i> Save
+                            </button>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="import-contact" role="tabpanel" aria-labelledby="tab-import-contact">
                         Import contact
