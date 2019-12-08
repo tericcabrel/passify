@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{app/layout/main}">>
+<head>
+    <title>Add App Account</title>
+    <link rel="stylesheet" th:href="@{/assets/css/app/accounts.css}">
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="row create-bank-account">
+        <div th:insert="app/user/bank-accounts/include/create-form :: create-form"></div>
+    </div>
+</div>
+<div layout:fragment="scripts">
+    <!--<script th:src="@{'/assets/js/create-contact.js'}"></script>-->
+</div>
+</body>
+</html>
