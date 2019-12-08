@@ -11,7 +11,21 @@
 <body>
 <div layout:fragment="content">
     <div class="row create-app-account">
-        <div th:insert="app/user/accounts/include/create-form :: create-form"></div>
+        <div class="offset-xl-2 offset-2 col-xl-8 col-8">
+            <div class="card">
+                <div class="card-header d-flex">
+                    <h4 class="mb-0">Create application account</h4>
+                </div>
+                <div class="card-body">
+                    <div th:insert="app/user/accounts/include/create-form :: create-form"></div>
+                </div>
+                <div class="card-footer d-flex justify-content-end">
+                    <button class="btn btn-sm btn-success">
+                        <i class="fas fa-check"></i> Save
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <div layout:fragment="scripts">
