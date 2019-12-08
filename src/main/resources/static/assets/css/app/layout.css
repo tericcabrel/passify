@@ -12,3 +12,11 @@ ul {
 body {
     color: #222d32 !important;
 }
+
+#pick-logo-modal .logo-picker-item .logo-group {
+    cursor: pointer;
+}
+#pick-logo-modal .logo-picker-item .logo-group:hover, .logo-picker-item .logo-group.selected {
+    background-color: #5969ff;
+    color: #fff;
+}

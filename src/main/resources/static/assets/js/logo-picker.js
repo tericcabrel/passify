@@ -1,4 +1,4 @@
-const brands =
+const brandString =
     'fab fa-500px\n' +
     'fab fa-accessible-icon\n' +
     'fab fa-accusoft\n' +
@@ -328,3 +328,42 @@ const brands =
     'fab fa-yoast\n' +
     'fab fa-youtube\n' +
     'fab fa-youtube-square\n';
+
+const brandArray = brandString.replace(/fab fa-/g, '').split('\n');
+
+const capitalize = (str) => {
+    const array = str.split('-').map((item) => {
+        // console.log(item);
+        // item[0] = item[0].toUpperCase();
+
+        return item;
+    });
+
+    return array.join(' ');
+};
+
+const brands = brandArray.map((item) => {
+   return {
+       icon: item,
+       name: capitalize(item)
+   };
+});
+
+// console.log(brands);
+
+$(() => {
+    const controls = {
+        logoPicker: $('#logo-picker')
+    };
+
+    brands.map((brand) => {
+        controls.logoPicker.append(`<div class="col-xl-4 logo-picker-item mb-2">
+                                        <div class="d-flex flex-column align-items-center logo-group">
+                                            <span>
+                                                <i class="fab fa-${brand.icon}"></i>
+                                            </span>
+                                            <span class="brand-name">${brand.name}</span>
+                                        </div>
+                                    </div>`);
+    });
+});

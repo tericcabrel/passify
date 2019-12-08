@@ -23,13 +23,17 @@
                 </a>
             </div>
             <div class="modal-body">
-                <div class="logo-picker">
-                    
+                <input id="input-label" type="search" class="form-control mb-3" placeholder="Search a brand..." />
+
+                <div id="logo-picker" class="row" style="height: 300px; overflow-y: auto">
+
                 </div>
             </div>
             <div class="modal-footer">
                 <div class="d-flex justify-content-between w-100">
-                    <button class="btn btn-danger btn-sm" type="button" id="btn-pick-logo-cancel">Cancel</button>
+                    <button class="btn btn-danger btn-sm" type="button" id="btn-pick-logo-cancel" data-dismiss="modal">
+                        Cancel
+                    </button>
                     <button class="btn btn-success btn-sm" type="button" id="btn-pick-logo-select">Select</button>
                 </div>
             </div>
