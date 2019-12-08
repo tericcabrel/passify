@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{app/layout/main}">>
+<head>
+    <title>App Accounts</title>
+    <link rel="stylesheet" th:href="@{/assets/css/app/accounts.css}">
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="row app-accounts">
+            <div class="col-xl-12 col-12">
+                <div class="card">
+                    <h5 class="card-header d-flex justify-content-between">
+                        <div>Contact list</div>
+                        <a href="/" class="btn btn-sm btn-primary" th:href="@{/accounts/create}">
+                            <i class="fas fa-plus"></i> Add contact
+                        </a>
+                    </h5>
+                    <div class="card-body p-0">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div layout:fragment="scripts">
+
+    </div>
+</body>
+</html>
