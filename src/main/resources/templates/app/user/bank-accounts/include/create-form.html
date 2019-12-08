@@ -7,7 +7,13 @@
 </head>
 <body>
     <div id="create-form-bank-account" th:fragment="create-form">
-        <h1>Bank Account Create Form</h1>
+        <form>
+            <div class="card-wrapper"></div>
+            <input type="text" id="number" name="number" placeholder="number" />
+            <input type="text" id="name" name="name" placeholder="name" />
+            <input type="text" id="expiry" name="expiry" placeholder="expiry" />
+            <input type="text" id="cvc" name="cvc" placeholder="cvc" />
+        </form>
     </div>
 </body>
 </html>
