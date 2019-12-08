@@ -14,13 +14,45 @@
             <div class="col-xl-12 col-12">
                 <div class="card">
                     <h5 class="card-header d-flex justify-content-between">
-                        <div>Bank Account list</div>
+                        <input type="search" class="form-control" placeholder="Search an account..." id="input-search-bank-account" />
                         <a href="/" class="btn btn-sm btn-primary" th:href="@{/bank-accounts/create}">
                             <i class="fas fa-plus"></i> Add account
                         </a>
                     </h5>
                     <div class="card-body p-0">
+                        <div class="row" style="height: inherit">
+                            <div class="col-md-4 pr-0" style="height: inherit; border-right: solid 1px #ddd">
+                                <ul class="social-sales account-items list-group list-group-flush">
+                                    <li class="list-group-item social-sales-content">
+                                        <span class="social-sales-icon-circle facebook-bgcolor mr-2">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </span>
+                                        <span class="social-sales-name">Facebook</span>
+                                    </li>
+                                    <li class="list-group-item social-sales-content">
+                                        <span class="social-sales-icon-circle twitter-bgcolor mr-2">
+                                            <i class="fab fa-twitter"></i>
+                                        </span>
+                                        <span class="social-sales-name">Twitter</span>
+                                    </li>
+                                    <li class="list-group-item social-sales-content">
+                                        <span class="social-sales-icon-circle instagram-bgcolor mr-2">
+                                            <i class="fab fa-instagram"></i>
+                                        </span>
+                                        <span class="social-sales-name">Instagram</span>
+                                    </li>
+                                    <li class="list-group-item social-sales-content">
+                                        <span class="social-sales-icon-circle pinterest-bgcolor mr-2">
+                                            <i class="fab fa-pinterest-p"></i>
+                                        </span>
+                                        <span class="social-sales-name">Pinterest</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8" style="height: inherit;">
 
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
