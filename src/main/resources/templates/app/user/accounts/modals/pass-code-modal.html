@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="passCodeModal"
+     class="modal fade"
+     tabindex="-1"
+     role="dialog"
+     id="pass-code-modal"
+     aria-labelledby="passCodeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="passCodeModalLabel">Authentication</h5>
+                <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </a>
+            </div>
+            <div class="modal-body">
+                <div class="form-group mb-4">
+                    <label for="input-pass-code">Enter your pass code:</label>
+                    <input type="password" class="form-control text-center" id="input-pass-code" minlength="4"/>
+                </div>
+
+                <div class="alert alert-success alert-dismissible fade show mt-4" role="alert" id="pass-code-success">
+                    <strong>The password for this account is: [Naruto@2019$]</strong>
+                    <a href="#" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </a>
+                </div>
+
+                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert" id="pass-code-error">
+                    <strong>The pass code is invalid!</strong>
+                    <a href="#" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </a>
+                </div>
+
+                <div class="d-flex justify-content-center mt-5">
+                    <button class="btn btn-success btn-sm" type="button" id="btn-pass-code-login">
+                        <i class="fas fa-check"></i> Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

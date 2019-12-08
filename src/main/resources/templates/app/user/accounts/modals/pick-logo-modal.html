@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="pickLogoModal"
+     class="modal fade"
+     tabindex="-1"
+     role="dialog"
+     id="pick-logo-modal"
+     aria-labelledby="pickLogoModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pickLogoModalLabel">Logo picker</h5>
+                <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </a>
+            </div>
+            <div class="modal-body">
+                <input id="input-label" type="search" class="form-control mb-3" placeholder="Search a brand..." />
+
+                <div id="logo-picker" class="row" style="height: 300px; overflow-y: auto">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="d-flex justify-content-between w-100">
+                    <button class="btn btn-danger btn-sm" type="button" id="btn-pick-logo-cancel" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button class="btn btn-success btn-sm" type="button" id="btn-pick-logo-select">Select</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

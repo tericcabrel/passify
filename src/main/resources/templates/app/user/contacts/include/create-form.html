@@ -11,10 +11,12 @@
             <label for="input-name" class="col-form-label">Name* : </label>
             <input id="input-name" type="text" class="form-control" placeholder="Eg: Harris, Sanix, Teco, etc." />
         </div>
+
         <div class="form-group">
             <label for="input-birth" class="col-form-label">Date of birth : </label>
             <input id="input-birth" type="text" class="form-control" placeholder="YYYY-MM-DD" />
         </div>
+
         <div class="form-group">
             <label for="input-gender" class="col-form-label">Gender* : </label>
             <div id="input-gender">
@@ -28,6 +30,7 @@
                 </label>
             </div>
         </div>
+
         <div class="form-group">
             <label for="input-country" class="col-form-label">Country* : </label>
             <select class="form-control" id="input-country">
@@ -36,11 +39,33 @@
                 <option value="fr">France</option>
             </select>
         </div>
-        <div class="border-top border-bottom d-flex justify-content-between">
+
+        <div class="phone-header d-flex justify-content-between align-items-center pt-1 pb-1 mt-4">
             <span>Phone Number</span>
             <button class="btn btn-primary btn-sm">
-                <i class="fas f"></i>
+                <i class="fas fa-plus"></i>
             </button>
+        </div>
+
+        <div class="phone-content mt-3">
+            <div class="form-group">
+                <label for="phone-1">Phone number 1: </label>
+                <div class="d-flex ">
+                    <input type="text" class="form-control is-valid mr-2" id="phone-1" placeholder="Ex: 699332234" />
+                    <button class="btn btn-danger btn-sm ml-2">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone-2">Phone number 2: </label>
+                <div class="d-flex ">
+                    <input type="text" class="form-control is-valid mr-2" id="phone-2" placeholder="Ex: 699332234" />
+                    <button class="btn btn-danger btn-sm ml-2">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

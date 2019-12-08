@@ -1,3 +1,29 @@
 .contacts {
     
 }
+
+#create-form-contact {
+
+}
+
+#create-form-contact .phone-header {
+    border-top: solid 2px #5969ff !important;
+    border-bottom: solid 2px #5969ff !important;
+    color: #5969ff;
+    font-size: 20px;
+}
+
+#create-form-contact .phone-content label {
+    font-size: 12px !important;
+}
+
+#import-contact {
+    
+}
+#import-contact #contact-upload-content {
+    border: dashed 2px #5969ff;
+    width: 100%;
+    background-color: #f1f1ff;
+    height: 200px;
+    cursor: pointer;
+}
