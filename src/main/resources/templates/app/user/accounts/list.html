@@ -10,17 +10,104 @@
 </head>
 <body>
     <div layout:fragment="content">
-        <div class="row app-accounts">
+        <div class="row accounts app-accounts">
             <div class="col-xl-12 col-12">
                 <div class="card">
                     <h5 class="card-header d-flex justify-content-between">
-                        <div>App account list</div>
+                        <input type="search" class="form-control" placeholder="Search an account..." id="input-search-app-account" />
                         <a href="/" class="btn btn-sm btn-primary" th:href="@{/accounts/create}">
                             <i class="fas fa-plus"></i> Add account
                         </a>
                     </h5>
                     <div class="card-body p-0">
-
+                        <div class="row" style="height: inherit">
+                            <div class="col-md-4 pr-0" style="height: inherit; border-right: solid 1px #ddd">
+                                <ul class="social-sales account-items list-group list-group-flush">
+                                    <li class="list-group-item social-sales-content">
+                                        <span class="social-sales-icon-circle facebook-bgcolor mr-2">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </span>
+                                        <span class="social-sales-name">Facebook</span>
+                                        <a href="/" class="social-sales-count text-dark" target="_blank">open</a>
+                                    </li>
+                                    <li class="list-group-item social-sales-content">
+                                        <span class="social-sales-icon-circle twitter-bgcolor mr-2">
+                                            <i class="fab fa-twitter"></i>
+                                        </span>
+                                        <span class="social-sales-name">Twitter</span>
+                                        <a href="/" class="social-sales-count text-dark" target="_blank">open</a>
+                                    </li>
+                                    <li class="list-group-item social-sales-content">
+                                        <span class="social-sales-icon-circle instagram-bgcolor mr-2">
+                                            <i class="fab fa-instagram"></i>
+                                        </span>
+                                        <span class="social-sales-name">Instagram</span>
+                                        <a href="/" class="social-sales-count text-dark" target="_blank">open</a>
+                                    </li>
+                                    <li class="list-group-item social-sales-content">
+                                        <span class="social-sales-icon-circle pinterest-bgcolor mr-2">
+                                            <i class="fab fa-pinterest-p"></i>
+                                        </span>
+                                        <span class="social-sales-name">Pinterest</span>
+                                        <a href="/" class="social-sales-count text-dark" target="_blank">open</a>
+                                    </li>
+                                    <li class="list-group-item social-sales-content">
+                                        <span class="social-sales-icon-circle facebook-bgcolor mr-2">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </span>
+                                        <span class="social-sales-name">Facebook</span>
+                                        <a href="/" class="social-sales-count text-dark" target="_blank">open</a>
+                                    </li>
+                                    <li class="list-group-item social-sales-content">
+                                        <span class="social-sales-icon-circle googleplus-bgcolor mr-2">
+                                            <i class="fab fa-google-plus-g"></i>
+                                        </span>
+                                        <span class="social-sales-name">Google Plus</span>
+                                        <a href="/" class="social-sales-count text-dark" target="_blank">open</a>
+                                    </li>
+                                    <li class="list-group-item social-sales-content">
+                                        <span class="social-sales-icon-circle twitter-bgcolor mr-2">
+                                            <i class="fab fa-twitter"></i>
+                                        </span>
+                                        <span class="social-sales-name">Twitter</span>
+                                        <a href="/" class="social-sales-count text-dark" target="_blank">open</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8" style="height: inherit;">
+                                <div class="account-detail pl-3 pt-3 pr-4 pb-3">
+                                    <ul class="detail-list">
+                                        <li class="detail-list-item">
+                                            <div class="detail-list-item-label">Label:</div>
+                                            <div class="detail-list-item-value">Facebook</div>
+                                        </li>
+                                        <li class="detail-list-item">
+                                            <div class="detail-list-item-label">Description:</div>
+                                            <div class="detail-list-item-value">The best social network in the world</div>
+                                        </li>
+                                        <li class="detail-list-item">
+                                            <div class="detail-list-item-label">Login:</div>
+                                            <div class="detail-list-item-value">tecogill</div>
+                                        </li>
+                                        <li class="detail-list-item">
+                                            <div class="detail-list-item-label">Password:</div>
+                                            <div class="detail-list-item-value">************</div>
+                                        </li>
+                                        <li class="detail-list-item">
+                                            <div class="detail-list-item-label">Website URL:</div>
+                                            <div class="detail-list-item-value">
+                                                <a href="/" target="_blank">https://facebook.com</a>
+                                            </div>
+                                        </li>
+                                        <li class="mt-4 d-flex justify-content-end">
+                                            <a href="/accounts/create" class="btn btn-sm btn-success">
+                                                <i class="fas fa-pencil-alt"></i> Update
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
