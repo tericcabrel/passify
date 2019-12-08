@@ -10,6 +10,8 @@
 </head>
 <body>
     <div layout:fragment="content">
+        <div th:insert="app/user/accounts/modals/pass-code-modal :: passCodeModal"></div>
+
         <div class="row accounts app-accounts">
             <div class="col-xl-12 col-12">
                 <div class="card">
@@ -91,7 +93,13 @@
                                         </li>
                                         <li class="detail-list-item">
                                             <div class="detail-list-item-label">Password:</div>
-                                            <div class="detail-list-item-value">************</div>
+                                            <div class="detail-list-item-value d-flex justify-content-between">
+                                                <span>************</span>
+                                                <a href="#" class="btn btn-sm btn-outline-primary" style="cursor: pointer"
+                                                   data-toggle="modal" data-target="#pass-code-modal">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                            </div>
                                         </li>
                                         <li class="detail-list-item">
                                             <div class="detail-list-item-label">Website URL:</div>
