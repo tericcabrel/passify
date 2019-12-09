@@ -5,7 +5,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{app/layout/main}">>
 <head>
-    <title>Add Bank Account</title>
+    <title>Add Bank Card</title>
     <link rel="stylesheet" th:href="@{/assets/vendor/card/card.css}">
     <link rel="stylesheet" th:href="@{/assets/css/app/accounts.css}">
 </head>
@@ -15,10 +15,10 @@
         <div class="offset-xl-2 offset-2 col-xl-8 col-8">
             <div class="card">
                 <div class="card-header d-flex">
-                    <h4 class="mb-0">Create bank account</h4>
+                    <h4 class="mb-0">Add bank card</h4>
                 </div>
                 <div class="card-body">
-                    <div th:insert="app/user/bank-accounts/include/create-bank-form :: create-bank-form"></div>
+                    <div th:insert="app/user/bank-accounts/include/create-card-form :: create-card-form"></div>
                 </div>
                 <div class="card-footer d-flex justify-content-end">
                     <button class="btn btn-sm btn-success">

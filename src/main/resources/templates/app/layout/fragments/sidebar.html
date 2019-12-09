@@ -32,14 +32,27 @@
                         <div id="account-menu" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/" th:href="@{/accounts}">
+                                    <a class="nav-link" href="#" th:href="@{/accounts}">
                                         App account <span class="badge badge-secondary">New</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/" th:href="@{/bank-accounts}">
+                                    <a class="nav-link" href="/" data-toggle="collapse" aria-expanded="false" data-target="#bank-account-menu" aria-controls="bank-account-menu">
                                         Bank account
                                     </a>
+                                    <div id="bank-account-menu" class="collapse submenu" style="">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/" th:href="@{/bank-accounts}">
+                                                    List
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/" th:href="@{/bank-cards}">
+                                                    Cards
+                                                </a>
+                                            </li>
+                                        </ul>
                                 </li>
                             </ul>
                         </div>
