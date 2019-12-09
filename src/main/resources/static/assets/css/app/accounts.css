@@ -2,7 +2,7 @@
 
 }
 
-.accounts #input-search-app-account, #input-search-bank-account {
+.accounts #input-search-app-account, #input-search-bank-account, #input-search-bank-card {
     width: 50%;
     border-top: none;
     border-left: none;

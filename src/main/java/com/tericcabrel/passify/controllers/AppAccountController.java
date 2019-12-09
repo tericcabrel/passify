@@ -25,4 +25,14 @@ public class AppAccountController {
     public String createBankAccount(Model model) {
         return "app/user/bank-accounts/create";
     }
+
+    @GetMapping("/bank-cards")
+    public String listBankCard(Model model) {
+        return "app/user/bank-accounts/cards";
+    }
+
+    @GetMapping("/bank-cards/create")
+    public String createBankCard(Model model) {
+        return "app/user/bank-accounts/create-card";
+    }
 }
