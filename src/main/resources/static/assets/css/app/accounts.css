@@ -16,6 +16,12 @@
     height: 100%;
     overflow-y: auto;
 }
+.accounts .card-body .account-items li {
+    cursor: pointer;
+}
+.accounts .card-body .account-items li:hover, .accounts .card-body .account-items li.selected {
+    background-color: #f1f1ff;
+}
 .accounts .card-body .account-detail .detail-list {
     font-size: 16px;
 }

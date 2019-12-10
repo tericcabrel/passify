@@ -10,6 +10,8 @@
 </head>
 <body>
     <div layout:fragment="content">
+        <div th:insert="app/user/accounts/modals/pass-code-modal :: passCodeModal"></div>
+
         <div class="row accounts bank-cards">
             <div class="col-xl-12 col-12">
                 <div class="card">
@@ -24,33 +26,61 @@
                             <div class="col-md-4 pr-0" style="height: inherit; border-right: solid 1px #ddd">
                                 <ul class="social-sales account-items list-group list-group-flush">
                                     <li class="list-group-item social-sales-content">
-                                        <span class="social-sales-icon-circle facebook-bgcolor mr-2">
-                                            <i class="fab fa-facebook-f"></i>
-                                        </span>
-                                        <span class="social-sales-name">Facebook</span>
+                                        <div class="">UBA</div>
+                                        <span class="social-sales-name">Prepaid Card</span>
+                                    </li>
+                                    <li class="list-group-item social-sales-content selected">
+                                        <div class="">Afriland</div>
+                                        <span class="social-sales-name">Courant Card</span>
                                     </li>
                                     <li class="list-group-item social-sales-content">
-                                        <span class="social-sales-icon-circle twitter-bgcolor mr-2">
-                                            <i class="fab fa-twitter"></i>
-                                        </span>
-                                        <span class="social-sales-name">Twitter</span>
-                                    </li>
-                                    <li class="list-group-item social-sales-content">
-                                        <span class="social-sales-icon-circle instagram-bgcolor mr-2">
-                                            <i class="fab fa-instagram"></i>
-                                        </span>
-                                        <span class="social-sales-name">Instagram</span>
-                                    </li>
-                                    <li class="list-group-item social-sales-content">
-                                        <span class="social-sales-icon-circle pinterest-bgcolor mr-2">
-                                            <i class="fab fa-pinterest-p"></i>
-                                        </span>
-                                        <span class="social-sales-name">Pinterest</span>
+                                        <div class="">Ecobank</div>
+                                        <span class="social-sales-name">Courant Card</span>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-md-8" style="height: inherit;">
-
+                                <div class="account-detail pl-3 pt-3 pr-4 pb-3">
+                                    <ul class="detail-list">
+                                        <li class="detail-list-item">
+                                            <div class="detail-list-item-label">Card Name:</div>
+                                            <div class="detail-list-item-value">ERIC CABREL TIOGO</div>
+                                        </li>
+                                        <li class="detail-list-item">
+                                            <div class="detail-list-item-label">Card Number:</div>
+                                            <div class="detail-list-item-value">0323 3565 7653 0985</div>
+                                        </li>
+                                        <li class="d-flex">
+                                            <div class="detail-list-item w-50">
+                                                <div class="detail-list-item-label">Expiration Date:</div>
+                                                <div class="detail-list-item-value">04/2021</div>
+                                            </div>
+                                            <div class="detail-list-item w-50">
+                                                <div class="detail-list-item-label">CVC:</div>
+                                                <div class="detail-list-item-value">653</div>
+                                            </div>
+                                        </li>
+                                        <li class="detail-list-item">
+                                            <div class="detail-list-item-label">Card Terminal Code:</div>
+                                            <div class="detail-list-item-value d-flex justify-content-between">
+                                                <span>************</span>
+                                                <a href="#" class="btn btn-sm btn-outline-primary" style="cursor: pointer"
+                                                   data-toggle="modal" data-target="#pass-code-modal">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="detail-list-item">
+                                            <div class="detail-list-item-label">Card Type:</div>
+                                            <div class="detail-list-item-value">Prepaid Card</div>
+                                        </li>
+                                        <li class="mt-4 d-flex justify-content-end">
+                                            <a href="/accounts/create" class="btn btn-sm btn-success">
+                                                <i class="fas fa-pencil-alt"></i> Update
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
