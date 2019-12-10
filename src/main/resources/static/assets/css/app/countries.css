@@ -1,0 +1,14 @@
+.countries {
+
+}
+
+.countries .country {
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.countries .country .flag-icon {
+    font-size: 40px;
+}
+.countries .country .country-name {
+    font-size: 10px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{app/layout/main}">>
+<head>
+    <title>Countries</title>
+    <link rel="stylesheet" th:href="@{/assets/css/app/countries.css}">
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="row countries">
+            <div class="col-xl-12 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="w-100 mb-4">
+                            <input type="text" class="form-control" id="input-search-country" placeholder="Search in 196 countries..." />
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-2 country">
+                                <i class="flag-icon flag-icon-cm w-100" title="cm" id="cm"></i>
+                                <div class="country-name text-center w-100">Cameroon</div>
+                            </div>
+                            <div class="col-xl-2 country">
+                                <i class="flag-icon flag-icon-fr w-100" title="fr" id="fr"></i>
+                                <div class="country-name text-center w-100">France</div>
+                            </div>
+                            <div class="col-xl-2 country">
+                                <i class="flag-icon flag-icon-us w-100" title="us" id="us"></i>
+                                <div class="country-name text-center w-100">United States</div>
+                            </div>
+                            <div class="col-xl-2 country">
+                                <i class="flag-icon flag-icon-ca w-100" title="ca" id="ca"></i>
+                                <div class="country-name text-center w-100">Canada</div>
+                            </div>
+                            <div class="col-xl-2 country">
+                                <i class="flag-icon flag-icon-de w-100" title="de" id="de"></i>
+                                <div class="country-name text-center w-100">Germany</div>
+                            </div>
+                            <div class="col-xl-2 country">
+                                <i class="flag-icon flag-icon-gb w-100" title="gb" id="gb"></i>
+                                <div class="country-name text-center w-100">England</div>
+                            </div>
+                            <div class="col-xl-2 country">
+                                <i class="flag-icon flag-icon-nl w-100" title="nl" id="nl"></i>
+                                <div class="country-name text-center w-100">Netherlands</div>
+                            </div>
+                            <div class="col-xl-2 country">
+                                <i class="flag-icon flag-icon-jp w-100" title="jp" id="jp"></i>
+                                <div class="country-name text-center w-100">Japan</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div layout:fragment="scripts">
+
+    </div>
+</body>
+</html>
