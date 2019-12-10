@@ -10,4 +10,9 @@ public class CountryController {
     public String list(Model model) {
         return "app/user/countries/list";
     }
+
+    @GetMapping("/evaluations")
+    public String evaluations(Model model) {
+        return "app/user/countries/evaluations";
+    }
 }
