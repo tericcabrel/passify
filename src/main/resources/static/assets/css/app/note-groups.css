@@ -22,3 +22,6 @@
     color: #fff !important;
     transition: all .5s;
 }
+.note-groups .note-group:hover h3 {
+    color: #fff !important;
+}

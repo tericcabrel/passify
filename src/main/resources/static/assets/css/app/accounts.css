@@ -35,6 +35,17 @@
     padding-left: 30px;
     margin-top: 5px;
 }
+.accounts .note-group-add {
+    height: 237px;
+}
+.accounts .note-group:hover, .accounts .note-group-add:hover {
+    background-color: #0e0c28 !important;
+    color: #fff !important;
+    transition: all .5s;
+}
+.accounts .note-group:hover a, .accounts .note-group:hover h3 {
+    color: #fff !important;
+}
 
 .app-accounts {
     
