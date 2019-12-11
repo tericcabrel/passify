@@ -10,12 +10,14 @@
 </head>
 <body>
     <div layout:fragment="content">
+        <div th:insert="app/user/countries/modals/add-evaluation-modal :: addEvaluationModal"></div>
+
         <div class="row evaluations">
             <div class="col-xl-12 col-12">
                 <div class="card">
-                    <div class="card-header d-flex justify-content-between">
+                    <div class="card-header d-flex justify-content-between align-items-center">
                         <h3>Country evaluation</h3>
-                        <button class="btn btn-sm btn-primary">
+                        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#add-evaluation-modal">
                             <i class="fas fa-plus"></i> Add
                         </button>
                     </div>
@@ -24,11 +26,13 @@
                             <div id="accordion3">
                                 <div class="card">
                                     <div class="card-header" id="headingSeven">
-                                        <h5 class="mb-0 w-100 d-flex justify-content-between align-items-center">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                                <i class="flag-icon flag-icon-cm mr-3"></i> Cameroon
+                                        <h5 class="mb-0 w-100">
+                                            <button class="btn btn-link w-100 d-flex justify-content-between align-items-center collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                                <div>
+                                                    <i class="flag-icon flag-icon-cm mr-3"></i> Cameroon
+                                                </div>
+                                                <div><b>28.5 / 50</b></div>
                                             </button>
-                                            <div><b>28.5 / 50</b></div>
                                         </h5>
                                     </div>
                                     <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion3" style="">
@@ -68,11 +72,13 @@
                                 </div>
                                 <div class="card mb-2">
                                     <div class="card-header" id="headingEight">
-                                        <h5 class="mb-0 w-100 d-flex justify-content-between align-items-center">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                                                <i class="flag-icon flag-icon-ca mr-3"></i> Canada
+                                        <h5 class="mb-0 w-100">
+                                            <button class="btn btn-link w-100 collapsed d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                                <div>
+                                                    <i class="flag-icon flag-icon-ca mr-3"></i> Canada
+                                                </div>
+                                                <div><b>47.5 / 50</b></div>
                                             </button>
-                                            <div><b>47.5 / 50</b></div>
                                         </h5>
                                     </div>
                                     <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion3" style="">
@@ -112,11 +118,13 @@
                                 </div>
                                 <div class="card mb-2">
                                     <div class="card-header" id="headingNine">
-                                        <h5 class="mb-0 w-100 d-flex justify-content-between align-items-center">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                                                <i class="flag-icon flag-icon-us mr-3"></i> United States
+                                        <h5 class="mb-0 w-100">
+                                            <button class="btn btn-link collapsed w-100 d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                                <div>
+                                                    <i class="flag-icon flag-icon-us mr-3"></i> United States
+                                                </div>
+                                                <div><b>45.75 / 50</b></div>
                                             </button>
-                                            <div><b>45.75 / 50</b></div>
                                         </h5>
                                     </div>
                                     <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordion3" style="">
